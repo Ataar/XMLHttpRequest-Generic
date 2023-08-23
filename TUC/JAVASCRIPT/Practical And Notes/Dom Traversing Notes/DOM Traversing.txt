@@ -1,0 +1,293 @@
+
+
+                                                DOM
+
+what is node?
+
+ans:-
+
+In the DOM, all parts of the document, such as elements, attributes, text, etc
+are organized in a hierarchical tree-like structure consisting of parents and children. 
+These individual parts of the document are known as nodes.
+
+****************************************************************************************
+
+Dom Traversing:-
+1- it is  a relationship between the elements in the form of parent and child.
+2- it is used to select the nodes in Dom tree from other nodes.
+
+*****************************************************************************************
+
+  HTML CODE:-
+
+
+ <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+        <ul class="list-group text-center" id="skill">
+          <li class="list-group-item">1 HTML</li>
+          <li class="list-group-item">2 Css</li>
+          <li class = 'imp list-group-item' id="imp01">3 JS</li>
+          <li class="list-group-item">4 Angular</li>
+          <li class="list-group-item">5 Sass</li>
+        </ul>
+ 
+    </div>
+  </div>
+ </div>
+
+
+
+.parentNode Property:-
+
+1- The parentNode property returns the parent element with childrens of a selected element.
+
+
+eg:-
+const sel = document.getElementById('imp01')
+const sel01 =imp01.parentNode;
+console.log(sel01)
+
+*****************************************************************************
+
+.parentElement Property:-
+
+1- it returns the parent Element with childrens of an element.
+
+eg:-
+const sel = document.getElementById('imp01')
+const sel01 = imp01.parentElement;
+console.log(sel01)
+
+
+********************************************************************************
+
+
+closest() method :-
+
+1- it is a js method which is used to match the specific selector of an element with the given selector  
+ to get the whole element. if it doesn't match so it returns Null.
+
+eg:-1
+
+let sell = document.getElementById('imp01')
+let row01 =imp01.closest('.row');
+console.log(row01)
+
+eg:-2
+
+let row01 =imp01.closest('.text-center');
+console.log(row01)
+******************************************************************************
+
+
+childNodes Property :-
+
+1- it is Dom property which is used to give the NodeList of an element.
+2- it also returns overall collection list of an element.
+
+
+let child = document.getElementById('skill')
+let chi01 = skill.childNodes;
+//let chi02 = [...skill.childNodes] > here we can convert it into array.
+console.log(chi01);
+**********************************************************************************
+
+childern property:-
+1- it is Dom property which is used to give the HTML Collection of selected element.
+ 
+
+eg-1
+let d = document.getElementById('skill')
+let d01 =skill.children;
+// let d02 =[...skill.children]
+console.log(d01)
+
+
+
+// eg:-2
+
+let sil02 = skill.children[1];
+console.log(sil02);
+
+
+
+
+// eg-3
+const sel = document.querySelector('#imp01')
+const sel01 = imp01.children;
+console.log(sel)
+
+***********************************************************************
+
+firstChild Property:-
+
+1-firstChild Property is used to return the firstchild Node of its parent node element.
+
+//eg-1
+let pra = skill.firstChild;
+console.log(pra)
+**************************************************************************
+
+firstElementChild Property:-
+1- this property is used to give the First element of the selected element.
+
+eg:-
+let sil = skill.firstElementChild;
+console.log(sil)
+****************************************************************************
+
+lastElementChild property:-
+
+1- this property is used to give the Last element of the selected element.
+
+eg:-
+let sil01 = skill.lastElementChild;
+console.log(sil01)
+
+****************************************************************************
+
+childElementCount property:-
+
+1- this property is used to count the number of child elements of an element.
+
+eg:-
+let count = skill.childElementCount;
+console.log(count);
+*******************************************************************************
+
+nextSibling Property:-
+1- it is a Dom property which returns the next node of the selected element.
+just like text node ,whitespace between the elements are also text nodes.
+
+
+// nextSibling Property
+eg:-
+let nex = skill.nextSibling;
+console.log(nex)
+**********************************************************************************
+
+nextElementSibling Property:-
+
+1- This is used to give the next element of the selected element along with its content.
+It returns null if it has no next sibling.
+
+eg:- 
+let nex01 = text.nextElementSibling;-
+console.log(nex01);
+*****************************************************************************************
+
+previousElementSibling Property:-
+
+1- This is used to give the pervious element of the selected element along with its content.
+ It returns null if it has no previous sibling.
+
+eg:-
+let nex01 = text01.previousElementSibling;-
+console.log(nex01);
+
+*********************************************************************************************
+
+  
+
+    add():-
+
+1- The add() method inserts a new element with a specified value.
+
+eg:-
+
+let ab=  document.getElementById('skill')
+let para = document.createElement('li');
+para.classList = 'list-group-item'
+const node = document.createTextNode(`1 python`);
+
+para.append(node)
+skill.prepend(para)
+
+*************************************************************************************
+   remove():-
+
+1-The add() method removes a  element with a specified value form the document.
+
+eg:-
+let sel = document.getElementById('paper')
+sel.remove();
+
+********************************************************************************
+
+append():-
+
+1- The append() method inserts a element with specified content at the end of selected elements.
+
+eg:-
+
+let add = document.getElementById('skill')
+ let lang = document.createElement('li')
+ lang.className = 'list-group-item';
+ let text = document.createTextNode(`0 Visual-Basic`)
+
+lang.append(text)
+skill.prepend(lang)
+
+*********************************************************************************************
+
+
+prepend():-
+
+1- The append() method inserts a element with specified content at the end of selected elements.
+
+
+
+
+eg:-
+
+let c = document.createElement('li');
+c.className ='list-group-item';
+ let c2 = document.createTextNode(`Python`)
+
+ c.prepend(c2);
+ skill.append(c) 
+
+************************************************************************************************
+
+before() method:-
+
+1-this is used to insert the content before the selected element.
+
+eg:-
+
+let head = document.getElementById('skill')
+let h01 = document.createElement('h1');
+let h02 =document.createTextNode(` Welcome To The Js World `)
+h01.style.color='red',h01.style.textAlign = 'center' ;
+
+h01.append(h02)
+skill.before(h01)
+
+*************************************************************************************
+
+after():-
+
+1- this is used to insert the content after the selected element.
+
+eg:-
+
+let head01 = document.getElementById('skill')
+let he01 = document.createElement('h1');
+let h03 =document.createTextNode(` Finishing point `)
+he01.style.color='red',he01.style.textAlign = 'center' ;
+
+he01.append(h03)
+skill.after(he01)
+-----------------------------------------------------------------------------------
+
+// eg-2
+
+let para01= document.getElementById('skill')
+let para02 = document.createElement('p');
+para02.className = 'alert alert-info';
+para02.innerHTML = `This is a paragraph which is taken by using after method`
+skill.after(para02);
+******************************************************************************************
+

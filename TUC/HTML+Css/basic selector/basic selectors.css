@@ -1,0 +1,108 @@
+
+/* 1- universal selector
+The universal selector (*) selects all HTML elements on the page.
+it takes viewport height and width.*/
+* 
+{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	color:white;
+/* 	background-color:green;
+	 */
+}
+
+
+
+/* h1                         
+{
+color:white;
+background-color:green;
+display:inline-block;
+margin:0 0px 10px 0;
+}	 */
+
+
+
+
+p.demo
+{
+	color:green;
+	background-color:yellow;
+	margin-bottom:10px;
+}
+
+
+    .box-info                  
+{
+	color:gold;
+	background-color:black;
+} 
+
+
+.xyz p
+{
+	margin:0px 0px 15px 0px;
+	padding:10px;
+}	
+	
+	
+	
+
+
+p                     /* it is tag selctor example */
+{
+	color:black;
+	background-color:aqua;
+	padding:20px;
+	font-size:25px;
+	text-align:center;
+	
+	
+}
+
+
+.info ,.data p      /* it is example of class selectors &  
+                    /* here the specificity of class is greater than tag selector.*/
+{
+	color:black;
+	background-color:lime;
+	font-size:22px;
+	
+}
+
+
+/* .data p
+{
+	color:gold;
+	background-color:black;
+	font-size:22px;
+	padding:10px;
+} */
+
+/*----------------------------------------------------*/
+
+
+/* it is a example of id selector	
+The Specificity of id is greater than class selector*/
+
+#main-sec p                 
+{
+ color:tomato;
+background-color:pink;
+}
+
+.text p
+{
+	
+	color:red;
+	background-color:maroon;
+}
+
+
+
+
+
+
+
+

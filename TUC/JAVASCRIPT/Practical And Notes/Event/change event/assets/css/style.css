@@ -1,0 +1,17 @@
+/* #b-color
+{
+   
+    width:300px;
+    height: 300px;
+    margin:1% auto;
+} */
+
+.form-control,#b-color
+{
+    text-align: center;
+    font-weight: bold;
+    font-size:18px;
+    margin: 1% auto;
+    width:200px;
+        
+}

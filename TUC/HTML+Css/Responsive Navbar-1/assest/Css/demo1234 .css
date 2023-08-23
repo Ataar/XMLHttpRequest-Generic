@@ -1,0 +1,87 @@
+.text
+{
+  background:rgb(165, 159, 159);
+}
+
+.data
+{
+ 
+  background-color: #c1e83e;
+}
+
+.nav>li>a {
+  
+  display:block;
+  color: #600505;
+  text-decoration: none;
+  font-size:25px;
+  font-weight: bold;
+  background-color: rgb(29, 210, 174);
+}
+
+
+  .logo
+  {
+  font-size:25px;
+  font-weight:bold;
+  text-transform: uppercase;
+  font-family:'Courier New';
+  position:absolute;
+  left:1%;
+  top:1.5%;
+   width:30px;
+}
+
+.navbar-form
+{
+  position: absolute;
+  left:20%;
+  top:0%;
+}
+
+.form-group input
+{
+   text-transform: uppercase;
+   text-align: center;
+   
+}  
+
+
+
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  text-transform: uppercase;
+
+}
+
+.vid video
+{
+  margin:15px; 
+  width:40%;
+  border-radius:5px;
+}
+.para
+{
+  width:35%;
+  color:#2c0819;
+  position:absolute;
+  right:2%;
+  top:10%;
+  font-size:18px;
+  font-weight: bold;
+  font-family:'Lucida Sans';
+  text-align: justify;
+}
+  
+  
+@media all  and (min-width:650px)
+{
+  .para
+  {
+    
+  }
+}
+

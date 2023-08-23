@@ -1,0 +1,60 @@
+for loop :-
+
+Def:- it is a one type of loop that is used to repeat the elements until the condition is false.
+
+---------------------------------------------------------------------------------------------
+
+syntax:-
+
+for(initalization; condition ; increment or decrement)
+{
+     statement
+}
+-------------------------------------------------------------------------------------------
+
+eg-1
+
+   let ages = [11,21,23,15,24,26,45,58,57,59]
+
+  for(let i = 0 ;i<ages.length;i++)
+  {
+    console.log(ages[i])
+  }
+
+
+
+
+o/p:-
+
+11
+21
+23
+15
+24
+26
+45
+58
+57
+59
+
+************************************************************************
+
+To create a new array using for loop.
+
+eg-2
+
+let ages = [11,21,23,15,24,26,45,58,57,59]
+
+let loop = [];
+for(let i = 0 ;i<ages.length;i++)
+{
+    loop.push(ages[i]*2)
+}
+console.log(loop)
+
+
+o/p:- 
+
+    [22, 42, 46, 30, 48, 52, 90, 116, 114, 118]
+
+****************************************************************************

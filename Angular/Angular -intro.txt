@@ -1,0 +1,7 @@
+What is Angular?  (ng means Angular)
+
+def:- Angular is an open-source, JavaScript framework written in TypeScript. 
+
+it is used to create SPA (single page applications.)
+
+angular has it's own CLI(Command line interface).

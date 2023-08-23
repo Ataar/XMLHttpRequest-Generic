@@ -1,0 +1,49 @@
+*
+{
+padding:0;
+margin:0;
+box-sizing:border-box;
+font-family: 'Archivo Black', sans-serif;
+}
+body
+{
+  background-color:Black;
+  position:relative;
+  height:100vh;
+
+}
+
+h1
+{
+   color:turquoise;
+   position:absolute;
+   top:25%;
+   left:39%;
+   font-size:50px;
+   /* text-decoration-style:dashed;
+   text-decoration-color: rgb(16, 16, 23); */
+   text-transform:capitalize;
+   text-shadow:2px 2px 30px #d4aeae;
+
+}
+
+
+.digitalClock
+{
+    font-size:75px;
+    /* font-family:Arial, Helvetica, sans-serif; */
+    color:ivory;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 3px 3px 11px #f74e00;
+    /* border-radius:20px; */
+    /* border-width:3px;
+    border-style:double;
+    border-color:yellow; */
+    padding:10px;
+   /* text-decoration:line-through; */
+    text-decoration:underline;
+    text-decoration-color: gold; 
+}

@@ -1,0 +1,43 @@
+*
+{
+padding:0;
+margin:0;
+box-sizing:border-box;
+}
+
+p
+{
+	    color:red;
+		background-color:lime;
+		height:300px;
+		width:400px;
+		font-size:19px;
+		text-align:center;
+		font-family:elephant;
+		border:2px solid gray;
+		margin:20px auto;
+		padding:60px 0px;
+}
+
+.box-info > p /* it is a direct child selector.*/
+{
+	color:white;
+	background-color:brown;
+	margin:10px auto;
+}
+
+ /* .info h1
+{     
+    width:400px;
+	background-color:yellow;
+	padding:20px;
+	text-align:center;
+	margin:0 auto;
+} */
+
+
+.info > span
+{
+	background-color:aqua;
+	color:black;
+}

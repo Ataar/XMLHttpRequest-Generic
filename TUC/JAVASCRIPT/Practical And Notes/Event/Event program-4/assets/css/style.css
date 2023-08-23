@@ -1,0 +1,70 @@
+ /* img
+
+{
+ 
+   margin-top: 5%;
+    
+}
+
+
+
+ .btn-primary
+{
+   position:absolute;
+    left:11%;
+    top:1%;
+} 
+
+
+
+
+.btn-primary:hover
+{
+    color:black;
+    background-color:red;
+} */
+
+
+
+/* 
+ 
+.box
+{
+    width:200px;
+    height:200px;
+    background-color: orange ;
+}   */
+
+.btn01, .btn01:hover {
+    color: #fff;
+    background-color: #007;
+    border-color:#007;
+    margin:1% auto;
+    display: block;
+    font-weight:bold;
+    box-shadow:1px 1px 1px #007;
+    
+}
+
+
+
+.box p
+{
+    margin:0 auto;
+    display:block;
+    width:50%;
+    text-align: center;
+    font-weight:bold;   
+}
+
+.img01
+{
+    margin:20px auto;
+    display:block;
+    width:50%;
+}
+
+.p
+{
+    color:red;
+}

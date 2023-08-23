@@ -1,0 +1,33 @@
+body
+{
+    background-color: rgb(4, 43, 95);
+}
+
+.all
+{
+    margin-bottom:20px;
+
+}
+
+.all>div
+{
+    height:300px;
+    border:1px solid white;
+}
+
+.Blueviolet>div
+{
+    background-color: rgb(190, 95, 201);
+}
+
+.Green>div{
+    background-color: rgb(28, 77, 28);
+}
+
+.pink>div{
+    background-color:pink;
+}
+
+.yellow>div{
+    background-color:rgb(158, 158, 5);
+}

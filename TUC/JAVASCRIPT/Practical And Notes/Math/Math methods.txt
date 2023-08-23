@@ -1,0 +1,245 @@
+
+  Math.sqrt()
+
+To get sqaure root of an array using for loop
+
+
+let ages = [11,21,23,15,24,26,45,58,57,59]
+console.log(ages)
+for(let i =0; i<ages.length ;i++)
+{
+    console.log(Math.sqrt(ages[i]))
+    
+}
+
+o/p:-
+
+3.3166247903554
+4.58257569495584
+4.795831523312719
+3.872983346207417
+4.898979485566356
+5.0990195135927845
+6.708203932499369
+7.615773105863909
+7.54983443527075
+7.681145747868608
+
+**********************************************************************
+
+ To get the sqaure root of array values in a New Array using for loop
+
+
+let newArray = [];
+for(let i =0; i<ages.length ;i++)
+{
+    newArray.push(Math.sqrt(ages[i]))
+}
+console.log(newArray)
+
+
+o/p:-
+
+[3.3166247903554, 4.58257569495584,
+ 4.795831523312719, 3.872983346207417, 
+4.898979485566356, 5.0990195135927845,
+ 6.708203932499369, 7.615773105863909, 
+7.54983443527075, 7.681145747868608]
+
+***************************************************************************
+
+
+
+To get the sqrt of array values in New a array using forEach
+
+
+let ages = [11,21,23,15,24,26,45,58,57,59]
+
+let data =[];
+
+ages.forEach(function(add){
+    data.push(Math.sqrt(add))
+})
+console.log(data)
+
+o/p:-
+
+(10) [3.3166247903554, 4.58257569495584,
+ 4.795831523312719, 3.872983346207417, 
+4.898979485566356, 5.0990195135927845,
+ 6.708203932499369, 7.615773105863909,
+ 7.54983443527075, 7.681145747868608]
+
+*****************************************************************************
+To get sqrt of array values using map 
+
+let ages = [11,21,23,15,24,26,45,58,57,59]
+
+let data = ages.map(function(add){
+    return Math.sqrt(add)
+})
+
+console.log(data)
+
+o/p:-
+
+(10) [3.3166247903554, 4.58257569495584,
+ 4.795831523312719, 3.872983346207417, 
+4.898979485566356, 5.0990195135927845,
+ 6.708203932499369, 7.615773105863909,
+ 7.54983443527075, 7.681145747868608]
+
+****************************************************************************
+
+To get sqrt of array values using arrow function and map 
+
+
+let ages =[11,21,23,15,24,26,45,58,57,59]
+
+let data = ages.map(add=>{
+    return Math.sqrt(add)
+})
+console.log(data)
+
+   
+o/p:-
+
+(10) [3.3166247903554, 4.58257569495584,
+ 4.795831523312719, 3.872983346207417, 
+4.898979485566356, 5.0990195135927845,
+ 6.708203932499369, 7.615773105863909,
+ 7.54983443527075, 7.681145747868608]
+
+
+
+                                                              OR
+
+
+let ages =[11,21,23,15,24,26,45,58,57,59]
+
+let data = ages.map(add=>Math.sqrt(add))
+
+console.log(data)
+
+
+
+*****************************************************************************
+*****************************************************************************
+
+
+
+Math.power:-
+
+To get the power of  a array value
+
+let ages =[11,21,23,15,24,26,45,58,57,59]
+console.log(Math.pow(11,3))                         //   here 11 will mltiply by 3 times.
+
+o/p:- 1331
+
+********************************************************************
+
+
+To get the power of array values one by one using for loop with Math.pow
+
+let ages =[11,21,23,15,24,26,45,58,57,59]
+
+for(let i =0; i<ages.length; i++)
+{
+    console.log(Math.pow(ages[i],3))
+}
+
+o/p:-
+
+1331
+9261
+12167
+3375
+13824
+17576
+91125
+195112
+185193
+205379
+
+*********************************************************************
+
+To get the power of array values in New Array one by one using for loop with Math.pow
+
+
+let ages =[11,21,23,15,24,26,45,58,57,59]
+
+let pow =[];
+for(let i =0; i<ages.length; i++)
+{
+    let data =Math.pow(ages[i],3)
+    pow.push(data)
+}
+
+console.log(pow)
+
+o/p:-
+
+(10) [1331, 9261, 12167, 3375, 13824, 17576, 91125, 195112, 185193, 205379]
+
+******************************************************************************
+
+To get the power of array values one by one using forEach with Math.pow
+
+
+let ages =[11,21,23,15,24,26,45,58,57,59]
+
+ages.forEach(function(add){
+    console.log(Math.pow(add,3))
+})
+
+o/p:-
+
+
+1331
+9261
+12167
+3375
+13824
+17576
+91125
+195112
+185193
+205379
+
+
+********************************************************************************
+
+To get the power of array values in New Array one by one using forEach with Math.pow
+
+
+let data = [];
+ages.forEach(function(add){
+    data.push(Math.pow(add,3))
+})
+console.log(data)
+
+o/p:-
+
+(10) [1331, 9261, 12167, 3375, 13824, 17576, 91125, 195112, 185193, 205379]
+
+
+************************************************************************************
+
+
+To get power of array values using map mehtod
+
+
+let ages =[11,21,23,15,24,26,45,58,57,59]
+
+let data = ages.map(function(add){
+    return (Math.pow(add,3))
+})
+console.log(data)
+
+o/p:-
+
+(10) [1331, 9261, 12167, 3375, 13824, 17576, 91125, 195112, 185193, 205379]
+
+******************************************************************************
+

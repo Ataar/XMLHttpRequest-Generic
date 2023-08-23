@@ -1,0 +1,67 @@
+map method() :-
+
+it is Higher order function which returns new array.
+
+for using map follow some step
+1- we have given an array.
+2-we have to create a new array.
+3-we have to applay same functionality on each and every member of given array.
+
+------------------------------------------------------------------------------------
+
+syntax:- let newArray = given array.map(function(parameter){
+
+                statement
+})
+
+console.log(newArray)
+-------------------------------------------------------------------------------------
+
+eg-1
+
+let ages = [11,21,23,15,24,26,45,58,57,59]
+
+let mp = ages.map(function(age){
+    return age*2
+})
+console.log(mp)
+
+o/p:-[22, 42, 46, 30, 48, 52, 90, 116, 114, 118]
+
+
+                                  OR
+
+
+
+let ages = [11,21,23,15,24,26,45,58,57,59]
+
+let mp = ages.map((age)=>{
+    return age*2
+})
+console.log(mp)
+
+o/p:-[22, 42, 46, 30, 48, 52, 90, 116, 114, 118]
+           
+                                    OR
+
+
+
+let ages = [11,21,23,15,24,26,45,58,57,59]
+
+let mp = ages.map(age=>age*2)                    
+console.log(mp)
+
+o/p:-[22, 42, 46, 30, 48, 52, 90, 116, 114, 118]
+
+note:- here arrow function says that if we have one statement then remove 
+          return and curly braces.  and if we have one parameter then remove () parentheses.
+
+                     
+****************************************************************
+
+
+
+
+
+
+

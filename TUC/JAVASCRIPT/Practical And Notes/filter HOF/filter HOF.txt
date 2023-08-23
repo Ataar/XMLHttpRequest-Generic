@@ -1,0 +1,415 @@
+
+
+eg:-
+
+let data = [11,34,15,78,45,74,17];
+
+
+To print the number which are greater than 18 using forEach and if condition.
+
+
+let add = [];
+
+data.forEach(age=>{
+    if(age>=18)
+    {
+        add.push(age)
+    }
+   
+})
+console.log(add)
+
+o/p:-
+
+(4) [34, 78, 45, 74]
+
+
+**********************************************************************
+let arr = [11,34,15,78,45,74,17];
+
+let data = [];
+
+arr.forEach(add=>{
+
+    if(add>=18)
+    {
+        data.push(add)
+    }
+})
+
+console.log(data)
+
+o/p:-
+
+(4) [34, 78, 45, 74]
+
+**********************************************************************
+
+
+let companies = [
+       
+    {name:'Company One', category:'Finance', start: 1981, end: 2003 },
+    {name:'Company Two', category:'Retail', start: 1992, end: 2008 },
+    {name:'Company Three', category:'Auto', start: 1999, end: 2007 },
+    {name:'Company Four', category:'Retail', start: 1989, end: 2010 },
+    {name:'Company Five', category:'Technology', start: 2009, end: 2014 },
+    {name:'Company Six', category:'Finance', start: 1987, end: 2010 },
+    {name:'Company Seven', category:'Auto', start: 1986, end: 1996 },
+    {name:'Company Eight', category:'Technology', start: 2011, end: 2016 },
+    {name:'Company Nine', category:'Retail', start: 1981, end: 1989 },
+];
+
+
+To print the values from array object using for loop
+
+
+let Company = [];
+
+for(let i =0 ;i<companies.length ;i++)
+{
+    if(companies[i].category.toLowerCase().trim() ==='retail'){
+        Company.push(companies[i])
+    }
+   
+}
+console.log(Company)
+
+o/p:-
+
+0: {name: 'Company Two', category: 'Retail', start: 1992, end: 2008}
+1: {name: 'Company Four', category: 'Retail', start: 1989, end: 2010}
+2: {name: 'Company Nine', category: 'Retail', start: 1981, end: 1989}
+length: 3
+
+
+**********************************************************************
+
+To print the values from array object using for loop with includes()
+
+let Company = [];
+
+for(let i =0 ;i<companies.length ;i++)
+{
+    if(companies[i].category.toLowerCase().trim().includes('retail')){
+        Company.push(companies[i])
+    }
+   
+}
+console.log(Company)
+
+o/p:-
+
+0: {name: 'Company Two', category: 'Retail', start: 1992, end: 2008}
+1: {name: 'Company Four', category: 'Retail', start: 1989, end: 2010}
+2: {name: 'Company Nine', category: 'Retail', start: 1981, end: 1989}
+length: 3
+
+
+**********************************************************************
+
+To print the values from array object using for loop with indexOf()
+
+let Company = [];
+
+for(let i =0 ;i<companies.length ;i++)
+{
+    if(companies[i].category.toLowerCase().trim().indexOf('retail')>-1){ 
+                    //here indexOf('retail) is greater than -1
+        Company.push(companies[i])
+    }
+   
+}
+console.log(Company) 
+
+o/p:-
+
+0: {name: 'Company Two', category: 'Retail', start: 1992, end: 2008}
+1: {name: 'Company Four', category: 'Retail', start: 1989, end: 2010}
+2: {name: 'Company Nine', category: 'Retail', start: 1981, end: 1989}
+length: 3
+
+**********************************************************************
+
+To print the values from array object using forEach with indexOf()
+
+
+let Company = [];
+
+companies.forEach(add=>{
+
+    if(add.category.toLowerCase().trim().includes('retail'))
+    {
+        Company.push(add)
+    }
+      
+})
+console.log(Company)
+   
+
+o/p:-
+
+0: {name: 'Company Two', category: 'Retail', start: 1992, end: 2008}
+1: {name: 'Company Four', category: 'Retail', start: 1989, end: 2010}
+2: {name: 'Company Nine', category: 'Retail', start: 1981, end: 1989}
+length: 3
+
+
+
+**********************************************************************
+
+
+                                             filter():-
+
+
+Def:- The filter is  a higher order function which creat a new array
+
+1- you have given a array
+2- you have given a condition
+3-you have to create an array
+
+
+
+syntax:-
+
+new variable = given arrayName.filter(function(parameter){
+
+                conditions
+})
+
+***********************************************************************
+
+eg:-
+
+
+let data = [11,34,15,78,45,74,17];
+
+let add = data.filter(function(add){
+   
+    if(add>=18)
+    {
+        return true
+    }
+    else
+    {
+        return false
+    }
+})
+console.log(add)
+
+o/p:-
+
+(4) [34, 78, 45, 74]
+
+
+                                                                                   OR
+
+
+
+let data = [11,34,15,78,45,74,17];
+
+let add = data.filter(function(add)
+{
+         return add>=18
+})
+   
+    console.log(add)
+
+(4) [34, 78, 45, 74]
+
+
+
+
+                                                                                  OR
+
+
+let data = [11,34,15,78,45,74,17];
+
+let add = data.filter(add=>add=18)
+console.log(add)
+
+o/p:-
+
+(4) [34, 78, 45, 74]
+
+*********************************************************************************
+To get values from array using filter and arrow function.
+
+
+let arr = [11,34,15,78,45,74,17];
+
+let data = arr.filter(add=>{
+    return add>=18
+})
+      console.log(data)
+
+
+o/p:-
+
+(4) [34, 78, 45, 74]
+
+
+                                                         OR
+
+
+let arr = [11,34,15,78,45,74,17];
+
+let data = arr.filter(add=>add>=18)
+      console.log(data)
+
+            
+****************************************************************************
+
+
+
+let companies = [
+       
+    {name:'Company One', category:'Finance', start: 1981, end: 2003 },
+    {name:'Company Two', category:'Retail', start: 1992, end: 2008 },
+    {name:'Company Three', category:'Auto', start: 1999, end: 2007 },
+    {name:'Company Four', category:'Retail', start: 1989, end: 2010 },
+    {name:'Company Five', category:'Technology', start: 2009, end: 2014 },
+    {name:'Company Six', category:'Finance', start: 1987, end: 2010 },
+    {name:'Company Seven', category:'Auto', start: 1986, end: 1996 },
+    {name:'Company Eight', category:'Technology', start: 2011, end: 2016 },
+    {name:'Company Nine', category:'Retail', start: 1981, end: 1989 },
+];
+
+
+let data = companies.filter(add=>{
+    return add.category.toLowerCase().trim().includes(('retail'))
+})
+console.log(data)
+
+
+                                                                   OR
+
+let data = companies.filter(add=>add.category.toLowerCase().trim().includes(('retail'))
+)
+console.log(data)
+
+
+
+
+o/p:-
+
+0: {name: 'Company Two', category: 'Retail', start: 1992, end: 2008}
+1: {name: 'Company Four', category: 'Retail', start: 1989, end: 2010}
+2: {name: 'Company Nine', category: 'Retail', start: 1981, end: 1989}
+length: 3
+
+************************************************************************
+
+ Create a new array of companies who runs for is at least 10 years. Using for loop.
+
+let data =[];
+for(let i= 0; i<companies.length; i++)
+{
+    if(companies[i].end - companies[i].start>=10)
+    {
+       data.push(companies[i])
+    }
+    
+}
+console.log(data)
+
+
+o/p:-
+
+
+0: {name: 'Company One', category: 'Finance', start: 1981, end: 2003}
+1: {name: 'Company Two', category: 'Retail', start: 1992, end: 2008}
+2: {name: 'Company Four', category: 'Retail', start: 1989, end: 2010}
+3: {name: 'Company Six', category: 'Finance', start: 1987, end: 2010}
+4: {name: 'Company Seven', category: 'Auto', start: 1986, end: 1996}
+length: 5
+
+***************************************************************************
+
+
+ Create a new array of companies who runs for is at least 10 years. Using forEach.
+
+
+let data =[];
+companies.forEach(add=>{
+
+
+    if(add.end - add.start>=10)
+    {
+       data.push(add)
+    }
+    
+})
+console.log(data)
+
+o/p:-
+
+0: {name: 'Company One', category: 'Finance', start: 1981, end: 2003}
+1: {name: 'Company Two', category: 'Retail', start: 1992, end: 2008}
+2: {name: 'Company Four', category: 'Retail', start: 1989, end: 2010}
+3: {name: 'Company Six', category: 'Finance', start: 1987, end: 2010}
+4: {name: 'Company Seven', category: 'Auto', start: 1986, end: 1996}
+length: 5
+
+************************************************************************
+
+
+ Create a new array of companies who runs for is at least 10 years. Using filter.
+
+let add =companies.filter(pra=>{
+
+    return (pra.end-pra.start>10)
+
+})   
+console.log(add)
+
+
+                                                            OR
+
+let add =companies.filter(pra=> pra.end-pra.start>10)
+console.log(add)
+
+
+0: {name: 'Company One', category: 'Finance', start: 1981, end: 2003}
+1: {name: 'Company Two', category: 'Retail', start: 1992, end: 2008}
+2: {name: 'Company Four', category: 'Retail', start: 1989, end: 2010}
+3: {name: 'Company Six', category: 'Finance', start: 1987, end: 2010}
+length: 4
+
+***********************************************************************
+
+
+let companies = [
+       
+    {name:'Company One', category:'Finance', start: 1981, end: 2003 },
+    {name:'Company Two', category:'Retail', start: 1992, end: 2008 },
+    {name:'Company Three', category:'Auto', start: 1999, end: 2007 },
+    {name:'Company Four', category:'Retail', start: 1989, end: 2010 },
+    {name:'Company Five', category:'Technology', start: 2009, end: 2014 },
+    {name:'Company Six', category:'Finance', start: 1987, end: 2010 },
+    {name:'Company Seven', category:'Auto', start: 1986, end: 1996 },
+    {name:'Company Eight', category:'Technology', start: 2011, end: 2016 },
+    {name:'Company Nine', category:'Retail', start: 1981, end: 1989 },
+];
+
+
+To change object property name which will run for 10 years.
+
+
+  demo = companies.filter(add=>add.end - add.start>=10)
+  .map(add=>{
+    return{
+        Company : add.name,
+        Faculty  : add.category
+    }
+  })
+  console.log(demo)
+
+o/p:-
+
+0: {Company: 'Company One', Faculty: 'Finance'}
+1: {Company: 'Company Two', Faculty: 'Retail'}
+2: {Company: 'Company Four', Faculty: 'Retail'}
+3: {Company: 'Company Six', Faculty: 'Finance'}
+4: {Company: 'Company Seven', Faculty: 'Auto'}
+
+

@@ -1,0 +1,25 @@
+ img
+
+{
+ 
+   margin-top: 5%;
+    
+}
+
+
+
+ .btn-primary
+{
+   position:absolute;
+    left:11%;
+    top:1%;
+} 
+
+
+
+
+.btn-primary:hover
+{
+    color:black;
+    background-color:red;
+}

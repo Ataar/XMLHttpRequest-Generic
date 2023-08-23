@@ -1,0 +1,40 @@
+.text
+{
+    background-color: rgb(180, 7, 7);
+}
+
+
+
+button.navbar-toggle {
+    font-size: 20px;
+   
+}   
+
+
+a.navbar-brand {
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 20px;
+    color:white;
+}
+    
+  .navbar-nav>li>a{
+  
+    font-size:20px;
+    font-weight: bold;
+   
+}  
+
+
+  
+.form-group input
+{
+    text-transform: uppercase;
+    text-align:center;
+    font-weight: bold;
+}
+button.btn.btn-default{
+    text-transform:Uppercase;
+    color:black;
+}
+
