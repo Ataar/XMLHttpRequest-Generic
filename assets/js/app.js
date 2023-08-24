@@ -1,30 +1,33 @@
 
-let mytab = [...document.querySelectorAll('.mytab li')]
-//   here querySelectorAll gives nodeList of an element so that we have to convert it into Array
-let tabcon =[...document.querySelectorAll('.tabContent')]
-let onTab = (eve)=>
-{
-    let data = eve.target.getAttribute('data-id');
-      // here getAttribute is a method which returns the value of an element's attribute.
-      console.log(data)
-      
-        
-      tabcon.forEach(div=>div.classList.remove('active'))
+const accoheading =[...document.querySelectorAll('.accoheading')];
 
-      document.getElementById(data).classList.add('active'); 
+let onTab =(eve)=>{
+   let allclass = eve.target.className;
+   console.log(allclass)
 
+    accoheading.forEach(head=>head.classList.remove('active'))
+    // eve.target.classList.add('active');
+    // console.log([...eve.target.children][0])
+    //here children property is used to return children element of selected element in the form of HTMLcollection.
 
-      mytab.forEach(li =>li.classList.remove('active'));
-      eve.target.classList.add('active')
- 
+      let icon =[...eve.target.children][0];
+    if(allclass.includes('active')){
+        eve.target.classList.remove('active')
+        icon.classList.remove('fa-sort-up')
+        icon.classList.add('fa-sort-down')
+    }
+    else{
+        eve.target.classList.add('active')
+        icon.classList.add('fa-sort-up')
+        icon.classList.remove('fa-sort-down')
+    }
+
+    
+
 }
 
+accoheading.forEach(head=>{
+    // console.log(head)
 
-mytab.forEach(li=>{
-    // console.log(li)
-
-    li.addEventListener('click',onTab)
-    //   addEventListener ye document object par lagta hai
-});
-
-
+    head.addEventListener('click',onTab)
+})

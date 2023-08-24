@@ -1,0 +1,55 @@
+.mytab
+{
+    background-color: #2bbbad;
+    list-style:none;
+     display:flex;
+     padding:0;
+     margin:0;
+    
+}
+.card
+{
+    height: 300px;
+    border-bottom:1px solid gray;
+    
+}
+.mytab li
+{
+   
+    text-align:center;
+    padding:15px 5px;
+    color:white;
+    width:25%;
+    font-weight:bold;
+    font-size:20px;
+    font-family: Geneva;
+    cursor: pointer; 
+    
+}
+
+strong
+{
+    color:red;
+    font-size: 20px;
+}
+
+.tabContent
+{
+    display:none;
+  
+}
+
+
+/* .mytab li:active,
+.mytab li:hover,
+.mytab li:focus, */
+.mytab li.active
+{
+    background-color:rgb(0,0,0,.2);
+
+}
+
+.tabContent.active
+{
+    display:block;
+}

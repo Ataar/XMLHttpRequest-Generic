@@ -1,55 +1,47 @@
-.mytab
+.accoheading
 {
-    background-color: #2bbbad;
-    list-style:none;
-     display:flex;
-     padding:0;
-     margin:0;
-    
-}
-.card
-{
-    height: 300px;
-    border-bottom:1px solid gray;
-    
-}
-.mytab li
-{
-   
-    text-align:center;
-    padding:15px 5px;
-    color:white;
-    width:25%;
+    padding:12px;
+    margin:0;
+    cursor: pointer;
+    color:#021b04;
+    font-size:22px;
+    border:1px solid #89393924;
     font-weight:bold;
-    font-size:20px;
-    font-family: Geneva;
-    cursor: pointer; 
-    
 }
 
-strong
+.accoheading:hover
 {
     color:red;
-    font-size: 20px;
+
+   
 }
 
-.tabContent
+strong{
+
+    color:#f24a07cc;
+    font-size:18px;
+}
+
+.accoBody
 {
     display:none;
-  
+    border:1px solid #e8e6e6;
+    margin:0;
+    padding:20px;
 }
 
-
-/* .mytab li:active,
-.mytab li:hover,
-.mytab li:focus, */
-.mytab li.active
+.accoBody:hover
 {
-    background-color:rgb(0,0,0,.2);
-
+    font-size:20px;
 }
 
-.tabContent.active
+.accoheading.active + .accoBody
 {
     display:block;
+}
+
+.accoheading i{
+    float:right;
+    color:rgb(69, 63, 63);
+    font-size:20px;
 }

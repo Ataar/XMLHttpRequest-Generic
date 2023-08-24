@@ -96,6 +96,9 @@ console.log(chi01);
 
 childern property:-
 1- it is Dom property which is used to give the HTML Collection of selected element.
+
+2-The HTML DOM children property is used to return all the child elements 
+   of the specified element in the form of HTML collection.
  
 
 eg-1
