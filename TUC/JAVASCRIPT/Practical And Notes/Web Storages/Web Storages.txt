@@ -62,6 +62,11 @@ methods of session storge:-
 3- Remove Data from Session Storage. sessionStorage.removeItem("key");
 4- Remove All (Clear session Storage) sessionStorage.clear();    
 
+-----------------------------------------------------------------------------------------------------------------------
+
+B) fetch Api:-
+
+it is used to get the data from database.
 
 ************************************************************************
 ************************************************************************

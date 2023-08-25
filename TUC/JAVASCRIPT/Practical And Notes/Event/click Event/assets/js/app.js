@@ -4,7 +4,7 @@ let flag =true;
 
 let Btn =(eve)=>{
     // console.log(this)
-    //here eve stands for event which is a parameter taht gives PointerEvent Object.
+    //here eve stands for event which is a parameter that gives PointerEvent Object.
     //it represents to click Event. 
     console.log(eve.target)
     if(flag===true)
