@@ -1,4 +1,4 @@
-  what is server:-
+ what is server:-
 
 1) A server is a type of computer that receives, stores, and sends data to clients (laptops, phones, tablets).
 Different type of servers performs various functions.
@@ -33,7 +33,7 @@ Web storage is an HTML5 feature that allows you to store data in key value pairs
 There are two main web storage types.
 
  1- local storage 
-  The localStorage object allows you to save key/value pairs in the browser.
+  The localStorage object allows you to save data key/value pairs in the browser.
   The localStorage object stores data with no expiration date.
   The data is not deleted when the browser is closed, and are available for future sessions.
   LocalStorage is a data storage type of web storage. 
@@ -50,7 +50,7 @@ There are two main web storage types.
 
 
  2- session storage   
- The sessionStorage object  stores key/value pairs in the browser.
+ The sessionStorage object  stores data key/value pairs in the browser.
  The sessionStorage object stores data for only one session.
  (The data is deleted when the browser is closed).
  

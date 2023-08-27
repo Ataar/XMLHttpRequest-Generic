@@ -9,14 +9,65 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+ <h1 class="text-center bg-primary p-3 text-white">Form Submit Button</h1>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4">
+       <form id="std-form" class="mb-4">
 
-  <!-- web application: -->
-  <!-- web aplication means to intract with database. -->
-  <!-- in this we do 4 things -->
-  <!-- 1-data create
-  2-read
-  3-upadte
-  4-delete >> this is called curd application-->
+        <div class="form-group">
+         <label for="fname">First Name</label>
+         <input type="text" class="form-control" id="fname">
+        </div>
+
+
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" class="form-control" id="lname">
+         </div> 
+
+
+         <div class="form-group">
+          <label for="email">Email ID</label>
+          <input type="text" class="form-control" id="email">
+         </div>
+
+
+          <div class="form-group">
+          <label for="contact">Contact</label>
+          <input type="text" class="form-control" id="contact">
+         </div>
+    
+         <div class="text-right">
+          <button class="btn btn-primary" type="submit">
+            Add Student
+          </button>
+        </div>
+
+
+       </form>
+      </div>
+      <div class="col-md-8">
+        <table class="table table-bordered">
+          <thead class="head text-center">
+            <tr>
+              <th>SR.No</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email ID</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody class="text-center" id="stdContainer">
+            
+          </tbody>
+        </table>
+      </div>
+       
+    </div>
+  </div>
+
+
 <script src ='assets/js/app.js'>
 
 </script>

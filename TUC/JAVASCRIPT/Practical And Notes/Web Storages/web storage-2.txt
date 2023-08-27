@@ -1,0 +1,106 @@
+// this javascript data can not be sent in database and 
+//for that we have to convert the data in json format
+
+// let obj =
+// {
+//     fname:'jhone',
+//     lname:'doe',
+//     email:'jhone@gmail.com',
+//     contact:9877289282
+// }
+// here this object has been stored in DB
+// but database can not understand JS Object
+// -------------------------------------------------------
+
+
+
+// if we want to store the data from front-end(client-side) to back-end(DB) 
+// we have to convert js-obj into json(js object notation).
+
+
+// ----------------------------------------------------------
+
+// json: json is familiyer to jacascript.
+// we store the data in database into json format
+
+
+// ----------------------------------------------------------
+
+
+
+// DB jo data hota hai wo json format me hota hai.
+
+//JS can not understand JSON so that we convert JSON into javascript object
+
+
+// *******************************************************************
+// *******************************************************************
+
+
+
+let std =
+ {
+     fname:'jhone',
+     lname:'doe',
+     email:'jhone@gmail.com',
+     contact:9877289282
+ }
+
+
+// JSON.stringify()is used to convert js-object into JSON
+let jsonObj =JSON.stringify(std)
+console.log(std)
+console.log(jsonObj)
+
+
+
+
+// JSON.parse()is used to convert JSON into js-object
+let dataFromDb = jsonObj;
+let jsObj =JSON.parse(dataFromDb);
+console.log(jsObj)
+
+
+// ********************************************************************
+// ********************************************************************
+
+
+// Diffrence Between js and JSON
+//   1- all keyes should be in double qoutes
+//   2- all code should be in double qoutes ,single quote should not be used
+//   3- at last key comma should not be used
+
+// ********************************************************************
+// ********************************************************************
+
+// jaise DB me data store karte waqat data ko  JSON format me store karte hain
+//usi tarah web storage me data store kate waqat data ko JSON format me store karna hota hai.
+
+// ********************************************************************
+// ********************************************************************
+
+
+
+// here localStorage .setItem method is used to add data into localStorage.
+
+// exam-1:-
+localStorage.setItem('std',JSON.stringify(std))
+
+// here localStorage.removeItem() is used to remove data from the localStorage.
+localStorage.removeItem('std',JSON.stringify(std));
+
+// exam-2
+
+let user = 'Akash';
+localStorage.setItem('user',user)
+
+// -------------------------------------------------------------------
+
+
+
+//  here localStorage.getItem() is used to get value
+
+let user01 = 'Sachin'
+localStorage.getItem('user01',user01)
+console.log(user01)
+
