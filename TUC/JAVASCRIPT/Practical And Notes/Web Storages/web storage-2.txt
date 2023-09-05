@@ -98,7 +98,7 @@ localStorage.setItem('user',user)
 
 
 
-//  here localStorage.getItem() is used to get value
+//  here localStorage.getItem() is used to get the data from localStorage.
 
 let user01 = 'Sachin'
 localStorage.getItem('user01',user01)

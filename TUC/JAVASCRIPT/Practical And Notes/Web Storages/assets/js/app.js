@@ -69,7 +69,7 @@ console.log(getdata)
 // **************************************************************
 // **************************************************************
 
-                    // sessionStor
+                    // sessionStorage
                     
 //  exap-1 of sessionStorage                   
 let sess ="programmer";
