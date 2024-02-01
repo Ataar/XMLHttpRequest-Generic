@@ -3,43 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email&Password Hide/Show</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <title>Calculate</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.3/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
- 
- 
-   <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <form id="stdForm">
-          <label for="UserContent"></label>
-          <input type="text" id="userContent" class="form-control" onkeyup="Disabled()">
-          <div class="text-right mt-3">
-            <button id="inputContent" disabled class="btn btn-success">Enter Value</button>
+<body class="bg-dark">
+    <div class="container">
+        <div class="card bg-dark center">
+            <h1 class="text-center text-white">You Can Calculate Now</h1>
+            <div class="row">
+                <div class="col-md-6 form-group mt-4">
+                    <input type="text" id="firstValue" class="form-control" placeholder="First Value...">
+                </div>
+                <div class="col-md-6 form-group mt-4">
+                    <input type="text" id="secondValue" class="form-control" placeholder="Second Value...">
+                </div>
+            </div>
+            <div class="text-right01">
+                <button class="btn" id="calculate">Calculate</button>
+            </div>
           </div>
+          <div id="output-container" class="text-center text01"></div>
+        </div>
   
-        </form>
-      </div>
-    </div>
-   </div>
-
-
-
-
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+        <script src="assets/js/app.js"></script>
+  
 
     
- 
-
-     
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
-<script src ='assets/js/app.js'>
-
-</script>
 </body>
 </html>
