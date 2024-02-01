@@ -1,6 +1,6 @@
  HOF :-  higher order function
 
- Def:-    a function which accet another function as argment is called as HOF.
+ Def:-    a function which accept another function as argment is called as HOF.
 **************************************************************
 
 callback function:-   a function passed as argument in another function.

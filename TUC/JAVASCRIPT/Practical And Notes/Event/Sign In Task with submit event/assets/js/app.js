@@ -44,7 +44,7 @@ else
         // title: 'Oops...',
         title:'Sorry!',
         text: 'Invalid Username or Password',
-        timer: 3000
+        timer: 3000		
     })
         sForm.reset();
         // here reset method is used to reset the values of elements in a form.

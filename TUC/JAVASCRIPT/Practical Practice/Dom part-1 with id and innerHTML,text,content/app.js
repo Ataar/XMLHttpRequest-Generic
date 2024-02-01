@@ -10,7 +10,7 @@ info.style.color ='red',info.style.fontSize ='30px';
 
 // *********************************************************************
 
-//to get the comtent form document
+//we have 3 properties to get the content form document
 
 // innerHTML ,textContent , innerText
 

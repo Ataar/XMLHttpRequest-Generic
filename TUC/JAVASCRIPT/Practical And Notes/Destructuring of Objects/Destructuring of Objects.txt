@@ -1,0 +1,15 @@
+ 
+Destructuring of Objects [ES6 Feature]:-
+
+def:- Destructuring object is a ES6 Feature which is used to extract values of kyes from
+              object ,arrays and assigns them to variable declaration.
+
+
+
+explanation:-  suppose there are multiple keys and we want to print thire values so we take multiple
+ declaration for each key.in that case the lines of codes willbe increased thatswhy 
+ To reduse that lines of code Destructuring object is used.  
+
+
+------------------------------------------------------------------------------------------------------------------
+

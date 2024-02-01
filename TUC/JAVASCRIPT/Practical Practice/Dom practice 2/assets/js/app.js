@@ -2,7 +2,7 @@
 // getElementsByClassName
 // it is a multiple slection method
 // it returns HTML collection
-// it looks like array object but not
+// it looks like array object but not an array
 
 const show =document.getElementsByClassName('list-group-item')
 console.log(show)

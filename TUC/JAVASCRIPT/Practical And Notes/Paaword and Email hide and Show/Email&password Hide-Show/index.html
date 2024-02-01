@@ -11,22 +11,47 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
- 
- 
+
    <div class="container">
     <div class="row">
-      <div class="col-6">
-        <form id="stdForm">
-          <label for="UserContent"></label>
-          <input type="text" id="userContent" class="form-control" onkeyup="Disabled()">
-          <div class="text-right mt-3">
-            <button id="inputContent" disabled class="btn btn-success">Enter Value</button>
-          </div>
-  
+        <div class="col-md-6 offset-sm-3">
+        <form class="stdForm" id="stdForm01">
+               <label for="email" class="text-white font-weight-bold">Email</label>
+               <div class="input-group mb-3">
+                <input type="password" id="email" class="form-control" placeholder="Enter Your Email" required>
+                <div class="input-group-prepend">
+                <span class="input-group-text">
+                <i class="fa-solid fa-eye-slash" id="id01"></i>
+                </span>
+                </div>
+              </div>
+
+
+
+              <label for="password" class="text-white font-weight-bold mt-5">Password</label>
+               <div class="input-group mb-3">
+                <input type="password" id="password" class="form-control" placeholder="Enter Your Password" required>
+                <div class="input-group-prepend">
+                <span class="input-group-text">
+                <i class="fa-solid fa-eye-slash" id="id02"></i>
+                </span>
+                </div>
+              </div>
+                 <div class="text-center mt-5">
+                 <button class="btn btn-primary font-weight-bold">Submit Now</button>
+               </div>
+        
+            
+        
+             
+           
+
         </form>
-      </div>
+        </div>
     </div>
    </div>
+     
+    
 
 
 
