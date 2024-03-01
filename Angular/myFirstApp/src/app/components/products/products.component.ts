@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
     ngOnInit(): void {
         setTimeout(() => {
             this.isdisabled = false;
-        }, 3000);
+        }, 4000);
     }
 }
 
