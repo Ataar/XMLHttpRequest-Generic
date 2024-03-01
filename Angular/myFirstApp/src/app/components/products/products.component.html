@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 offset-3">
+         <form class="font-weight-bolder mt-5">
+            <div class="form-group">
+                <label for="username">
+                    Username
+                </label>
+                <input type="text"class='form-control'>   
+                </div>
+                <div class="form-group">
+                <label for="password">
+                   Password
+                </label>
+                <input type="text"class='form-control'>   
+                </div>
+                <div class="text-right">
+
+                    <button class="btn btn-primary" [disabled]="isdisabled"type='submit'>Submit</button>
+                    <!-- here [disabled] is property binding  -->
+                </div>
+         </form>
+        </div>
+    </div>
+</div>
+<app-product></app-product>

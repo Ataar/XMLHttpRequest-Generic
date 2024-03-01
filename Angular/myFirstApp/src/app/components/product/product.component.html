@@ -1,0 +1,16 @@
+<p>This is product <strong>{{productName}} </strong> with id 
+  <strong>{{productId}}</strong> and status is {{productStatus}}</p>
+
+  <p [innerHTML]="productName">
+  <!-- here we can use innerHTML prpperty to get values -->
+</p>
+
+<p>
+  {{res}}  
+  <!-- it is string interpolation -->
+</p>
+
+<p [innerHTML]="res01">
+</p>
+
+<input type="text"class='mb-4 form-control'[value]="productName">
