@@ -94,7 +94,7 @@ const temp = (arr)=>{
     //     userArr = JSON.parse(localStorage.getItem('addUser'))
     // }
       
-    //  userArr = JSON.parse(localStorage.getItem('addUser')|| [])  // if the data in localstorage so get it and store into userArr if not so store the empty data in userArr.
+     userArr = JSON.parse(localStorage.getItem('addUser')|| [])  // if the data in localstorage so get it and store into userArr if not so store the empty data in userArr.
 
     temp(userArr)
 
