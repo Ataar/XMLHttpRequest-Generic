@@ -26,7 +26,7 @@ const blogs = [
      
   
     {
-        title: 'jack-th-giant-slayer-poster',
+        title: 'The King Of Fruite',
         content: `Mango is the King of fruits whereas  Litchi is the Queen. This very sweet, pulpy aromatic, and musky is also loaded with many health benefits like boosting the immune system, regulating blood health.`,
         images: './assets/images/kisan.jpg'
      },
