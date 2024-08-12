@@ -1,198 +1,32 @@
 body {
-
-    background: linear-gradient(to left, #471e1e, #726769);
+    background-color: rgb(12, 46, 43);
 }
 
-/* .row {
+.row {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-
-} */
-
-.card {
-    background-color: #e0bfc3;
+    height: 80vh;
 }
 
-.card h4 {
-    color: blue;
-    font-weight: bold;
-}
+.form-control {
+    border-width: 2px !important;
 
-.card p {
-    font-size: 20px;
-}
-
-/* Hide icons in PNotify notifications */
-[data-pnotify] .brighttheme-icon-closer,
-[data-pnotify] .brighttheme-icon-closer:after,
-[data-pnotify] .brighttheme-icon-sticker,
-[data-pnotify] .brighttheme-icon-sticker:after {
-    display: none;
 }
 
 
 
-/* right success icon */
-[data-pnotify] .brighttheme-icon,
-[data-pnotify] .brighttheme-icon>span,
-[data-pnotify] .brighttheme-icon>span:after {
-    width: 1.3rem !important;
-    height: 1.2rem;
-    line-height: 4.2rem;
+@media (min-width: 768px) and (max-width: 1024px) {
+    .form-control {
+        padding: 0 6.625rem;
+    }
+}
 
+.fa-solid {
     position: absolute;
-    top: -10% !important;
-    left: 28%;
-}
+    top: 30%;
+    right: 6%;
+    color: rgba(226, 5, 5, 0.973);
+    font-size: 18px;
 
-
-
-/* Success text css */
-span.color {
-    position: absolute;
-    top: 10%;
-    right: 40%;
-    color: lime;
-    font-size: 22px;
-    font-weight: 500;
-    font-style: italic;
-    display: block;
-
-
-}
-
-
-
-/* blog is created successfully text css */
-strong.text {
-    position: absolute;
-    top: 50%;
-    left: 21%;
-    padding: 5px 0;
-    display: block;
-
-}
-
-
-
-
-/* img css */
-.imG {
-    width: 18px;
-    vertical-align: middle;
-    height: 30px;
-    position: absolute;
-    top: -7%;
-    right: -40%;
-}
-
-
-
-
-
-/* Style for the PNotify container */
-[data-pnotify] .brighttheme-container {
-    padding: 1.65rem 1px;
-    background-color: var(--brighttheme-background-color);
-    /* background-color: rgb(11, 0, 14); */
-
-    border: 0 solid var(--brighttheme-border-color);
-    color: var(--brighttheme-text-color);
-    position: fixed;
-    /* Ensure fixed positioning */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Center the notification */
-    z-index: 9999;
-    /* Ensure it's above other content */
-}
-
-
-
-@media (min-width:320px) and (max-width:480px) {
-
-    [data-pnotify] .brighttheme-container {
-        max-width: 95%;
-    }
-
-    /* right success css responsive */
-    [data-pnotify] .brighttheme-icon {
-
-        position: absolute;
-        top: 10%;
-        left: 24%
-    }
-
-    span.color {
-        position: absolute;
-        right: 38%;
-    }
-
-    strong.text {
-        position: absolute;
-        top: 50%;
-        left: 17%;
-    }
-
-
-    @media (min-width:375px) {
-        [data-pnotify] .brighttheme-container {
-            max-width: 95%;
-        }
-
-        [data-pnotify] .brighttheme-icon {
-
-            position: absolute;
-            top: 10%;
-            left: 28%
-        }
-
-        strong.text {
-            position: absolute;
-            left: 22%
-        }
-    }
-
-}
-
-.card {
-    background-color: #e0bfc3;
-    margin-bottom: 20px;
-}
-
-
-h5.card-title.text-center.p-3 {
-    font-size: 20px;
-    font-weight: 700;
-    font-family: Georgia;
-}
-
-.card p {
-    text-align: center;
-
-}
-
-
-.card-img,
-.card-img-top {
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
-    height: 380px;
-}
-
-@media (max-width:320px) {
-
-    .card-img,
-    .card-img-top {
-        height: 280px;
-
-    }
-}
-
-.card p {
-    font-size: 20px;
-    font-family: ui-monospace
 }
