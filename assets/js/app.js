@@ -28,7 +28,7 @@ const blogs = [
     {
         title: 'The King Of Fruite',
         content: `Mango is the King of fruits whereas  Litchi is the Queen. This very sweet, pulpy aromatic, and musky is also loaded with many health benefits like boosting the immune system, regulating blood health.`,
-        images: './assets/images/fresh-fruit-salad-wooden-table-healthy-delicious-generated-by-artificial-intelligence_188544-125262.avif" alt="The King Of Fruite"'
+        images: 'assets/images/fresh-fruit-salad-wooden-table-healthy-delicious-generated-by-artificial-intelligence_188544-125262.jpg'
      },
 
      {
