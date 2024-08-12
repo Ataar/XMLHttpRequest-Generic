@@ -2,7 +2,7 @@ let cl = console.log;
 
 const blogs = [
     {
-        title: 'Impotrance Of Agriculture',
+        title: '<span class="atrificail">Artificial Intelligence',
         content: `The uptake of artificial intelligence (AI) in business is accelerating at pace. Through business acquisitions, in-house AI development and the creation of new AI brands, companies have access to a multitude `,
          images:'assets/images/Ai photo.webp'
          
@@ -15,7 +15,7 @@ const blogs = [
 
       {title: 'The Healthy Black Coffee',
       content: `Coffee is a morning staple that many people drink to give them the energy to get through the day. Whether you head to Starbucks or Dunkin' cup of joe or make it at home black coffee has several health benefits.`,
-      images:'./assets/images/coffee-cup-coffee-beans-aroma-wallpaper-preview.jpg'
+      images:'./assets/images/coffee-cup-coffee-beans-aroma-wallpaper.jpg'
      },
    
     {
@@ -32,9 +32,9 @@ const blogs = [
      },
 
      {
-        title:'cinnamon-hot-chocolate-glasses',
-        content:`Cinnamon Hot Chocolate is a wholesome but utterly luxurious healthy hot cocoa drink. Sweetened naturally using dates and with a hint of spice this healthy hot chocolate.`,
-        images:'./assets/images/cinnamon-hot-chocolate-glasses.jpg'
+        title:`<span class='text01'>cinnamon-hot-chocolate-glasses`,
+        content:`Cinnamon Hot Chocolate is a wholesome but utterly luxurious healthy hot cocoa drink. Sweetened naturally using dates and with a hint of spice this healthy hot chocolate so buy now.`,
+        images:'./assets/images/cinnamon-hot-chocolate-glasses.jpg '
 
      }
 
@@ -98,10 +98,9 @@ const temp = () => {
     let result = '';
    blogs.forEach((add) => {
 
-
-        result += `
-            <div class="col-md-4 mb-0">
-                <div class="card h-4">
+ result += `
+        <div class="col-md-4 mb-0">
+        <div class="card  h-4">
                 <div class="card-body">
                 <h5 class="card-title text-center p-3">${add.title}</h5>
                 <img src="${add.images}" class="card-img-top" alt="Card image">
