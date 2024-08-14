@@ -1,25 +1,53 @@
 body {
-
-    background: linear-gradient(to left, #471e1e, #726769);
+    /* background: linear-gradient(to right, rgb(31, 31, 2), rgb(77, 17, 17)) */
+    background: linear-gradient(to right, rgb(7, 7, 6), rgb(34, 11, 11))
 }
 
-/* .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 
-} */
+.h1Center {
+    font-size: 30px;
+    color: rgb(199, 211, 198);
+    /* background-color: rgb(34, 3, 3); */
+    background-color: rgb(8, 116, 44);
 
-.card-body {
-    background-color: #221d1e;
-    color: white;
-    /* background-color: #e0bfc3; */
-}
-
-.card h4 {
-    color: blue;
+    padding: 15px;
     font-weight: bold;
+    font-style: italic;
+    font-family: Tahoma;
+    text-align: center;
+
+
+}
+
+@media (min-width: 320px) and (max-width :480px) {
+    .h1Center {
+
+        font-size: 20px;
+        text-align: center;
+        font-family: Georgia;
+        padding: 13px;
+        background: darkkhaki;
+        color: currentColor;
+        font-weight: bold;
+    }
+
+}
+
+
+
+/* Style for the PNotify container */
+[data-pnotify] .brighttheme-container {
+
+    color: var(--brighttheme-text-color);
+    background-color: var(--brighttheme-background-color);
+    padding: 1.65rem 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+
+
+
 }
 
 
@@ -31,8 +59,6 @@ body {
     display: none;
 }
 
-
-
 /* right success icon */
 [data-pnotify] .brighttheme-icon,
 [data-pnotify] .brighttheme-icon>span,
@@ -42,185 +68,77 @@ body {
     line-height: 4.2rem;
 
     position: absolute;
-    top: -10% !important;
-    left: 28%;
+    top: 6% !important;
+    left: 10%;
 }
 
-
-
-/* Success text css */
-span.color {
-    position: absolute;
-    top: 10%;
-    right: 40%;
-    color: lime;
-    font-size: 22px;
-    font-weight: 500;
-    font-style: italic;
-    display: block;
-
-
-}
-
-
-
-/* blog is created successfully text css */
-strong.text {
-    position: absolute;
-    top: 50%;
-    left: 21%;
-    padding: 5px 0;
-    display: block;
-
-}
-
-
-
-
-/* img css */
-.imG {
-    width: 18px;
-    vertical-align: middle;
-    height: 30px;
-    position: absolute;
-    top: -7%;
-    right: -40%;
-}
-
-
-
-
-
-/* Style for the PNotify container */
-[data-pnotify] .brighttheme-container {
-    padding: 1.65rem 1px;
-    background-color: var(--brighttheme-background-color);
-    /* background-color: rgb(11, 0, 14); */
-
-    border: 0 solid var(--brighttheme-border-color);
-    color: var(--brighttheme-text-color);
-    position: fixed;
-    /* Ensure fixed positioning */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Center the notification */
-    z-index: 9999;
-    /* Ensure it's above other content */
-}
-
-
-
-@media (min-width:320px) and (max-width:480px) {
-
-    [data-pnotify] .brighttheme-container {
-        max-width: 95%;
-    }
-
-    /* right success css responsive */
-    [data-pnotify] .brighttheme-icon {
-
-        position: absolute;
-        top: 10%;
-        left: 24%
-    }
-
-    span.color {
-        position: absolute;
-        right: 38%;
-    }
-
-    strong.text {
-        position: absolute;
-        top: 50%;
-        left: 17%;
-    }
-
-
-    @media (min-width:375px) {
-        [data-pnotify] .brighttheme-container {
-            max-width: 95%;
-        }
-
-        [data-pnotify] .brighttheme-icon {
-
-            position: absolute;
-            top: 10%;
-            left: 28%
-        }
-
-        strong.text {
-            position: absolute;
-            left: 22%
-        }
-    }
-
+.pnotify-pre-line {
+    /* color: red; */
+    text-align: center;
+    margin-left: 32px;
 }
 
 .card {
-    background-color: #e0bfc3;
-    margin-bottom: 20px;
-    border: 1px solid rgb(24, 1, 1);
+    background-color: transparent;
+    margin: 15px 10px;
+    transition: transform 0.3s ease;
+    opacity: 1
 }
 
 
-h5.card-title.text-center.p-3 {
-    font-size: 20px;
+
+.card:hover {
+    transform: scale(1.1);
+    /* Slightly zooms in the element */
+    opacity: 0.8;
+}
+
+
+@media(min-width: 320px) {
+
+    .card {
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+}
+
+.card-title {
+    /* color: rgb(245, 241, 241); */
+    font-size: 22px;
     font-weight: 700;
     font-family: Georgia;
-
 }
 
-
-/* .text01 {
+.card-body {
     font-size: 18px;
-    text-wrap: nowrap;
+    text-align: justify;
+    color: white;
+}
+
+
+
+/* .anchorChange {
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+    font-size: 20px;
+}
+
+.styleColor {
+    color: yellow;
+    display: block;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-thickness: 2px;
+}
+
+.anchTagColor {
+    color: rgb(2, 255, 150);
+    display: block;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    text-decoration-thickness: 2px;
+
 } */
-
-
-.text01 .card {
-
-    height: 380px;
-}
-
-.card p {
-    text-align: center;
-    font-size: 20px;
-}
-
-
-.card-img,
-.card-img-top {
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
-    height: 400px;
-    margin: -10px 0 10px 0;
-    object-fit: cover;
-    background-position: center;
-
-
-}
-
-
-@media (min-width:320px) {
-
-    .atrificail {
-        margin-bottom: 26px;
-
-    }
-}
-
-.card p {
-    font-size: 20px;
-    font-family: ui-monospace
-}
-
-@media (max-width: 425px) {
-
-    .card-img,
-    .card-img-top {
-
-        height: 435px;
-        margin: 4px 0 10px 0;
-    }
-}
