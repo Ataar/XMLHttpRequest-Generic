@@ -1,116 +1,198 @@
 let cl = console.log;
+let data = document.getElementById('data');  
 
-const blogs = [
+
+
+let dataBlog = [   // Consider as DB
     {
-        title: '<span class="atrificail">Artificial Intelligence',
-        content: `The uptake of artificial intelligence (AI) in business is accelerating at pace. Through business acquisitions, in-house AI development and the creation of new AI brands, companies have access to a multitude `,
-         images:'assets/images/Ai photo.webp'
-         
+        title:'A. P. J. Abdul Kalam',
+        content:'He thus came to be known as the Missile Man of India for his work on the development of ballistic missile and launch vehicle technology.'
     },
     {
-        title: "Today's Technology",
-        content: `Modern technology has paved the way for multi-functional devices like the smartwatch and the smartphone. Computers are increasingly faster, more portable, and higher-powered than ever before.`,
-        images: './assets/images/426e09d1704e8e8c10f82df8eb3905ca.jpg'
-    },
-
-      {title: 'The Healthy Black Coffee',
-      content: `Coffee is a morning staple that many people drink to give them the energy to get through the day. Whether you head to Starbucks or Dunkin' cup of joe or make it at home black coffee has several health benefits.`,
-      images:'./assets/images/coffee-cup-coffee-beans-aroma-wallpaper.jpg'
-     },
-   
-    {
-        title: 'Jack and the Beanstalk',
-        content: `Jack is a poor boy who trades his cow for magic beans. The beans grow into a giant beanstalk reaching up to the sky. Jack climbs the beanstalk and discovers a giant's castle with treasures.`,
-        images: './assets/images/jack-beanstalk.jpg'
-    },
-     
-  
-    {
-        title: 'The King Of Fruite',
-        content: `Mango is the King of fruits whereas  Litchi is the Queen. This very sweet, pulpy aromatic, and musky is also loaded with many health benefits like boosting the immune system, regulating blood health.`,
-        images: 'assets/images/fresh-fruit-salad-wooden-table-healthy-delicious-generated-by-artificial-intelligence_188544-125262.jpg'
-     },
-
-     {
-        title:`<span class='text01'>cinnamon-hot-chocolate-glasses`,
-        content:`Cinnamon Hot Chocolate is a wholesome but utterly luxurious healthy hot cocoa drink. Sweetened naturally using dates and with a hint of spice this healthy hot chocolate so buy now.`,
-        images:'./assets/images/cinnamon-hot-chocolate-glasses.jpg '
-
-     }
-
-
-    
+        title:'Homi J. Bhabha',
+        content:'Homi Jehangir Bhabha, FNI,[3] FASc,[1] FRS[4](30 October 1909 to 24 January 1966) was an Indian nuclear physicist who is widely credited as the "father of the Indian nuclear programme".'
+    }
+        
+        
 ];
 
-function createBlog(blog,blog2,blog3) {
+    let createSpan = document.createElement('h5');  // h5 element is created with demo class
+    createSpan.classList.add('d-none');
+    cl(createSpan)
+    let successIcon = document.createElement('i')  // i elemnt is craeted for icon class
+    successIcon.classList.add("fas", "fa-check-circle")
+
+
+    createSpan.appendChild(successIcon) // append icon to h5 element
+
+    createSpan.appendChild(document.createTextNode('Hi, You are great.'))  // createTextNode is used to create a new text
+    // for an h5 element in document.
+   
+
+    data.appendChild(createSpan);  // h5 element which contains text and icon will be appended to parent element get id.
+
+
+    // -------------------------------------------------------------------------------------------------------------------------
+
+
+
+function createObjBlog(data) {        //  This function call API call to create/send data object in DB.
     setTimeout(() => {
-        blogs.push(blog,blog2,blog3);
-        PNotify.success({
-            title: `<span class='color' style='display: flex; align-items: center;'>
-                     Success
-                     <img class='imG' src='assets/images/boy-removebg-preview.png' alt='Success Icon' >
-                     </span>`,
-                     titleTrusted: true,
-                     text: `<span style="color: white;"><strong class='text'>Blog is created successfully</strong></span>`,
-                     textTrusted: true,
-                     maxTextHeight: null,
-                     delay: 200 // Adjust the delay as needed
-                    });
-                    getBlog(blogs);
+        const error = Math.random()>=.5 ? false : true ;         
+        if (!error) {
+            dataBlog.push(data)    
+            createSpan.classList.remove('d-none')
+            readBlog();// it gives data from DB
+            
+        } else {
+            
+            
+            PNotify.error({
+                title: 'Sorry, there is something wrong?',
+                delay: 5000000,
+            });
+            
+        }
     }, 1000);
 }
 
-function getBlog(arr) {
-    setTimeout(() => {
-        cl(arr);
-        temp(arr); // Pass the correct array dc
-    }, 1500);
-        
-      
 
+
+
+// --------------------------------------------------------------------------------------------------------------
+
+
+
+function readBlog() {           // this function call API call to get data from DB and here your choice where you want to store data.
+    setTimeout(() => {
+      let error =  Math.random()>=.5 ? false : true ;
+      if(!error)
+      {
+          
+          createSpan.classList.add('d-none')
+          let data = dataBlog;
+          temp(data)
+          
+         
+          
+        }
+        else
+        {
+            createSpan.remove('d-none')
+            PNotify.error({
+                title:'Plaese try After Sometime'
+            })
+        }
+      
+    }, 500);
 }
 
-createBlog(
-    {
-        title: 'The Ugly Duckling',
-        content: `A mother duck's eggs hatch and among the ducklings, one is larger and different from the rest. The mother duck is disappointed, but as time passes, the ugly duckling grows into a beautiful swan.`,
-        images: './assets/images/ugly duck.jpg'
-    },
-   {
-    title: 'jack-th-giant-slayer-poster',
-    content: `A Lion was once caught in the toils of a hunter's net. Unable to free himself, he lay roaring for help. A little Mouse came upon him, and, seeing the plight of the Lion, gnawed the net to pieces and set him free.`,
-    images: './assets/images/jack-th-giant-slayer-poster.jpg'
-},
-
- {
-    title: 'Yummy Corp feeds',
-    content: `In 2016, Mario Suntanu was a general partner at venture capital firm SMDV, but he saw a shift in the food and beverages industry. “Restaurants would not survive if they only have offline services.`,
-    images: './assets/images/Yummy-Corp-RD-Team.png'
- },
+      
+// ---------------------------------------------------------------------------------------------
 
 
-);
-
-let data = document.getElementById('data');
 
 
-const temp = () => {
+function temp(arr) {    // this function is used for templtating to show data On UI.
     let result = '';
-   blogs.forEach((add) => {
-
- result += `
-        <div class="col-md-4 mb-0">
-        <div class="card  h-4">
-                <div class="card-body">
-                <h5 class="card-title text-center p-3">${add.title}</h5>
-                <img src="${add.images}" class="card-img-top" alt="Card image">
-                <p class="card-text">${add.content}</p>
-                    </div>
-                </div>
-            </div>
-            
+    arr.forEach(getdata => {
+        result += `
+          
+            <div class = col-md-6 offset-3>
+            <div class="card  mb-4">
+            <div class="card-header">${getdata.title}</div>
+            <div class="card-body">${getdata.content}</div>
+            <div class="card-footer d-flex justify-content-between">
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+        </div>
+        </div>
         `;
-        
     });
     data.innerHTML = result;
-};
+}
+
+// Example call to createObjBlog
+createObjBlog({
+    title: "Hi Everyone! What's Up",
+    content: 'Can you please hold down? It is being moved.'
+});
+
+
+
+
+
+
+
+// const blogArr = [   // Suppose this is Our Database
+//     {
+//         title:'Hi Rahul',
+//         content:'plaese come with me to submit project'
+//     }
+// ];
+
+// function createBlog(blogData)   // this function is used to create blog objects and store into database.
+// {
+//     setTimeout(() => {        // setTimout has two arguments i.e callback function and timer.
+//         // it is a web browser API which makes the behavior of js synchronus to asynchronus. 
+
+      
+//      const error = false;
+//      if(!error)
+//         {
+//             blogArr.push(blogData)
+//             readBlog()
+//             // alert('Yes, You Got It')
+//         }
+//         else
+//         {
+//             alert('Plaese Check You Code again')
+//         }    
+
+//     },2000); // time to post/send API Call
+// }
+
+// // -------------------------------------------------------------------------------
+
+
+// function readBlog()   // this function is used to bring the data / blog objects form database.
+// {
+//     setTimeout(() => {  
+//       let data = blogArr
+//       cl(data)
+//       temp(data)    
+//     },1000);
+// }
+
+// createBlog({     // it contains arguments
+//     title: 'Lorem ipsum dolor sit amet consectetur.',
+//     content:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, provident!'
+// })
+
+
+
+
+// // ------------------------------------------------------------------------------------------
+
+
+
+// let data = document.getElementById('data')   // the html element is selected by id.
+
+// function temp(add)  // this function is used for templating to show UI data
+// {
+//    let ShowUI = '';  
+
+//    add.forEach(takeObject=>{
+
+//     ShowUI+=`
+    
+//            <span>${takeObject.title}</span>
+//            <p>${takeObject.content}</p>
+//     `
+
+//    });
+
+//   data.innerHTML = ShowUI
+
+// }
