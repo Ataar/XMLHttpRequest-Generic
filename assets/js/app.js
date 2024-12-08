@@ -161,6 +161,12 @@ const onUpdate = ()=>{
        {
            cl(xhr.response)
 
+           Swal.fire({
+             icon:'success',
+             title:'Congratulation',
+             text:'Successfuly Updated',
+             timer:2000
+           })
            let getIndex = postAarr.findIndex(post=>{
              return post.id == updateId
            })
@@ -169,7 +175,7 @@ const onUpdate = ()=>{
             postAarr[getIndex].title = updatedObj.title;
             postAarr[getIndex].body = updatedObj.body;
             postAarr[getIndex].userId = updatedObj.userId;
-
+             
 
               temp(postAarr)
 
