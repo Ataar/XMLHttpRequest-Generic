@@ -23,7 +23,9 @@ const fillData = (eve)=>{  // this function will make object by submiting a form
   }
     
    cl(obj)
-   createPosts(obj)  
+   userForm.reset()
+   createPosts(obj)
+
 }
 
 
@@ -89,6 +91,34 @@ const getAllPost = ()=>
 // -------------------------------------------------
 
 
+const onEdit = (ele)=>{
+    cl(ele)
+  
+    let getId = ele.closest('.card').id;
+    cl(getId)
+
+    getobjUrl = `${baseUrl}/posts/${getId}`
+    cl(getobjUrl)
+
+    let xhr = new XMLHttpRequest;
+
+    xhr.open('GET',`${getobjUrl}`,true)
+
+    xhr.send()
+
+    xhr.onload = function() {
+      if(xhr.status===200)
+      {
+          cl(xhr.response)
+          let getObj = JSON.parse(xhr.response);
+          title.value = getObj.title,
+          body.value = getObj.body,
+          userId.value = getObj.userId
+        }
+        
+          
+    }
+}
 
 
 let temp = (arr)=>{
@@ -96,7 +126,7 @@ let temp = (arr)=>{
   arr.forEach((add,i)=>{
     result+=`
     
-        <div class="card mb-4">
+        <div class="card mb-4" id="${add.id}">
 
                   <div class="card-header" style="background-color:${i % 2 === 0 ? 'lightblue': 'lightgreen'}">
                     <h2 class="text-center">${add.title}</h2>
@@ -108,7 +138,7 @@ let temp = (arr)=>{
 
                   
                   <div class="card-footer d-flex justify-content-between"style="background-color: ${i % 2 === 0 ? 'lightgray' : 'lightpink'};">
-                    <button class="btn btn-primary">Edit</button>
+                    <button class="btn btn-primary"onclick = 'onEdit(this)'>Edit</button>
                     <button class="btn btn-danger">Delete</button>
                   </div>
 
