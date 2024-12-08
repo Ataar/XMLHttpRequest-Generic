@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>intro of Promise</title>
+    <title>XMLHttpRequest-POST</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.min.css">
@@ -15,14 +15,58 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
   </head>
-  <body>
+  <body class="bg-dark">
 
     <h1 class="bg-success text-white p-3 mb-4 text-center">HTTP XMLHttpRequest</h1>
     <div class="container">
           <div class="row">
             <div class="col-md-6 offset-md-3">
-              <div id="postContainer">
-               
+
+             <div class="card mb-5">
+              <div class="card-body">
+                <form id="userForm">
+
+                  <div class="form-group">
+                    <label for="text">Title</label>
+                    <input type="text" class="form-control" id="title">
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="body">Content</label>
+                    <textarea type="text" class="form-control" id="body" rows="4"></textarea>
+                  </div>
+  
+  
+                  <div class="form-group">
+                    <label for="text">Users</label>
+                    <select  id="userId" class="form-control">
+  
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      
+                    </select>
+                  </div>
+                 
+                  <div class="text-right">
+                    <button class="btn btn-outline-primary mb-5" type="submit">Add Post</button>
+                  </div>
+                       
+                </form>
+              </div>
+             </div>
+              
+
+
+              <div id="postContainer"class='d-flex flex-column-reverse'>
+                
               </div>
             </div>
           </div>
