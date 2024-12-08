@@ -4,6 +4,8 @@ const userForm = document.getElementById('userForm')
 const title = document.getElementById('title')
 const body = document.getElementById('body')
 const userId = document.getElementById('userId')
+let sbBtn = document.getElementById('subBtn')
+let upBtn = document.getElementById('upBtn')
 
 
 
@@ -97,6 +99,10 @@ const onEdit = (ele)=>{
     let getId = ele.closest('.card').id;
     cl(getId)
 
+    localStorage.setItem('editId',getId)
+    cl(getId)
+
+  
     getobjUrl = `${baseUrl}/posts/${getId}`
     cl(getobjUrl)
 
@@ -114,11 +120,105 @@ const onEdit = (ele)=>{
           title.value = getObj.title,
           body.value = getObj.body,
           userId.value = getObj.userId
+
+          sbBtn.classList.add('d-none');
+          upBtn.classList.remove('d-none');
         }
         
           
     }
 }
+
+// ------------------------------------------
+
+
+const onUpdate = ()=>{
+   
+    let updatedObj = 
+{
+     title: title.value,
+     body: body.value,
+     userId: userId.value,
+}
+
+   cl(updatedObj)
+
+    let updateId = localStorage.getItem('editId')
+    cl(updateId)
+    
+    let updateUrl = `${baseUrl}/posts/${updateId}`;
+    cl(updateUrl)
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('PATCH',updateUrl,true);
+
+    xhr.send(JSON.stringify(updatedObj))
+
+    xhr.onload = function()
+    {
+       if(xhr.status===200)
+       {
+           cl(xhr.response)
+
+           let getIndex = postAarr.findIndex(post=>{
+             return post.id == updateId
+           })
+           cl(getIndex)
+          
+            postAarr[getIndex].title = updatedObj.title;
+            postAarr[getIndex].body = updatedObj.body;
+            postAarr[getIndex].userId = updatedObj.userId;
+
+
+              temp(postAarr)
+
+
+       }
+
+           userForm.reset()
+    }
+
+  }
+   
+    
+// ------------------------------------------
+
+const onDelete = (ele)=>{
+  cl(ele)
+
+  let delId = ele.closest('.card').id;
+  cl(delId)
+
+  let delUrl  = `${baseUrl}/posts/${delId}`;
+  cl(delUrl)
+
+  let xhr = new XMLHttpRequest()
+
+  xhr.open('DELETE',delUrl,true);
+
+  xhr.send()
+
+  xhr.onload = function()
+  {
+     if(xhr.status===200)
+     {
+        cl(xhr.response)
+
+       let card =  document.getElementById(delId)
+       cl(card)
+       card.remove()
+     }
+  }
+
+
+}
+
+
+
+
+
+
 
 
 let temp = (arr)=>{
@@ -139,7 +239,7 @@ let temp = (arr)=>{
                   
                   <div class="card-footer d-flex justify-content-between"style="background-color: ${i % 2 === 0 ? 'lightgray' : 'lightpink'};">
                     <button class="btn btn-primary"onclick = 'onEdit(this)'>Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger"onclick = 'onDelete(this)'>Delete</button>
                   </div>
 
                 </div>
@@ -152,4 +252,4 @@ let temp = (arr)=>{
 
 
 userForm.addEventListener('submit',fillData)
-
+upBtn.addEventListener('click',onUpdate)
