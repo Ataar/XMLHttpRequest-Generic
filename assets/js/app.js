@@ -50,13 +50,42 @@ const createPosts = (postObj) =>{  // thsi function's parameter will take object
            cl(xhr.response)
            postObj.id = JSON.parse(xhr.response).id;
            postAarr.push(postObj)
-           temp(postAarr)
+          //  temp(postAarr)
+          createCards(postObj)
+      
        }
     }
 }
 
+// -----------------------------------------------------------------
 
 
+
+const createCards = (postObj)=>{
+  let card = document.createElement('div')
+  card.className = 'card mb-4';
+  card.id = postObj.id;
+  card.innerHTML = `
+  
+  
+    <div class="card-header"style="background-color: lightblue;">
+            <h2 class="text-center">${postObj.title}</h2>
+          </div>
+
+          <div class="card-body text-center"style="background-color:white;">
+            <p>${postObj.body}</p>
+          </div>
+
+          
+          <div class="card-footer d-flex justify-content-between"style="background-color:lightgray;">
+            <button class="btn btn-primary"onclick = 'onEdit(this)'>Edit</button>
+            <button class="btn btn-danger"onclick = 'onDelete(this)'>Delete</button>
+          </div>
+  
+  
+  `
+  postContainer.append(card)
+}
 
 
 
