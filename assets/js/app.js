@@ -1,11 +1,52 @@
 let cl = console.log;
+
+
 const postContainer = document.getElementById('postContainer')
 const userForm = document.getElementById('userForm')
 const title = document.getElementById('title')
 const body = document.getElementById('body')
 const userId = document.getElementById('userId')
 let sbBtn = document.getElementById('subBtn')
+
 let upBtn = document.getElementById('upBtn')
+
+
+
+
+
+// Create the loader div
+let loader = document.createElement('div');
+loader.className = 'loader d-none';
+loader.id = 'loader';
+
+// object.assign is a method which allows you to copy the properties of one or more objects (called source object)
+// into a single target object
+Object.assign(loader.style, {    // loader.style is the target object
+  position: 'fixed',
+  top: '0',
+  left: '0',
+  height: '100vh',
+  width: '100%',
+  backgroundColor: 'rgba(255, 225, 255, 0.9)',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  zIndex: '9999', // Ensure the loader is above other elements
+});
+
+// Add the spinner content inside the loader div
+// spinner is used as content of loader HTML element
+loader.innerHTML = `
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+`;
+
+// Append the loader to the body or a specific target
+   document.body.appendChild(loader);
+
+// Optionally, log the loader to confirm
+// console.log(loader);
 
 
 
@@ -15,243 +56,260 @@ let postsUrl = `${baseUrl}posts`
 
  let postAarr = []
 
-const fillData = (eve)=>{  // this function will make object by submiting a form
-  eve.preventDefault()
-  let obj = 
-  {
-     title : title.value,
-     body :body.value,
-     userId : userId.value
-  }
-    
-   cl(obj)
-   userForm.reset()
-   createPosts(obj)
 
-}
+ const makeAPI = (methodName, apiUrl, bodyMsg = null) => {
+  loader.classList.remove('d-none')
+  let xhr = new XMLHttpRequest();
+  xhr.open(methodName, apiUrl);
 
+  // xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+  xhr.send( JSON.stringify(bodyMsg));
 
-// -----------------------------------------------------------------
-
-
-const createPosts = (postObj) =>{  // thsi function's parameter will take object by it's argument i.e createPosts(obj).
-   // actually it makes API Call to store object or data into DB.  
-  
-    let xhr = new XMLHttpRequest;
-
-    xhr.open('POST',postsUrl,true);
-
-    xhr.send(JSON.stringify(postObj)); // this will send object into DB
-
-    xhr.onload = function()
-    {
-       if(xhr.status === 200 || xhr.status === 201)
-       {
-           cl(xhr.response)
-           postObj.id = JSON.parse(xhr.response).id;
-           postAarr.push(postObj)
-          //  temp(postAarr)
-          createCards(postObj)
+  xhr.onload = function () {
+  loader.classList.add('d-none')
+    if (xhr.status >= 200 && xhr.status <= 299) {
       
-       }
-    }
-}
+      let response = JSON.parse(xhr.response);
 
-// -----------------------------------------------------------------
-
-
-
-const createCards = (postObj)=>{
-  let card = document.createElement('div')
-  card.className = 'card mb-4';
-  card.id = postObj.id;
-  card.innerHTML = `
-  
-  
-    <div class="card-header"style="background-color: lightblue;">
-            <h2 class="text-center">${postObj.title}</h2>
-          </div>
-
-          <div class="card-body text-center"style="background-color:white;">
-            <p>${postObj.body}</p>
-          </div>
-
+      if (methodName === 'GET') {
+        if (Array.isArray(response)) {
+          temp(response);
+        } else {
+          title.value = response.title;
+          body.value = response.body;
+          userId.value = response.userId;
           
-          <div class="card-footer d-flex justify-content-between"style="background-color:lightgray;">
-            <button class="btn btn-primary"onclick = 'onEdit(this)'>Edit</button>
-            <button class="btn btn-danger"onclick = 'onDelete(this)'>Delete</button>
-          </div>
-  
-  
-  `
-  postContainer.append(card)
-}
-
-
-
-// -----------------------------------------------------------------
-
-
-const getAllPost = ()=>
-  {
-    let xhr = new XMLHttpRequest();
-  
-  xhr.open('GET',postsUrl, true);
-  
-  xhr.send();
-  
-  xhr.onload = function()
-  {
-     if(xhr.status === 200)
-     {
-      cl(xhr.response)
-       postAarr = JSON.parse(xhr.response)
-      // cl(postAarr)
-      temp(postAarr)
-     }
-     else
-     {
-         alert('Somthing Went Wrong')
-     }
-  }
-  }
-  getAllPost()
-
-
-
-// -------------------------------------------------
-
-
-const onEdit = (ele)=>{
-    cl(ele)
-  
-    let getId = ele.closest('.card').id;
-    cl(getId)
-
-    localStorage.setItem('editId',getId)
-    cl(getId)
-
-  
-    getobjUrl = `${baseUrl}/posts/${getId}`
-    cl(getobjUrl)
-
-    let xhr = new XMLHttpRequest;
-
-    xhr.open('GET',`${getobjUrl}`,true)
-
-    xhr.send()
-
-    xhr.onload = function() {
-      if(xhr.status===200)
-      {
-          cl(xhr.response)
-          let getObj = JSON.parse(xhr.response);
-          title.value = getObj.title,
-          body.value = getObj.body,
-          userId.value = getObj.userId
-
           sbBtn.classList.add('d-none');
           upBtn.classList.remove('d-none');
         }
+
         
-          
-    }
-}
+        
+      } else if (methodName === 'PUT') {
+        let updatedId = response.id;
+        let updateCard = document.getElementById(updatedId);
+        let card = [...updateCard.children]
+        card[0].innerHTML = `<h2>${bodyMsg.title}</h2>`;
+        card[1].innerHTML = `<p>${bodyMsg.body}</p>`;
 
-// ------------------------------------------
+        // if (updateCard) {
+        //   updateCard.querySelector('h2').textContent = bodyMsg.title;
+        //   updateCard.querySelector('p').textContent = bodyMsg.body;
+        // }
 
+        userForm.reset()
+      sbBtn.classList.remove('d-none');
+      upBtn.classList.add('d-none');
 
-const onUpdate = ()=>{
-   
-    let updatedObj = 
-{
-     title: title.value,
-     body: body.value,
-     userId: userId.value,
-}
-
-   cl(updatedObj)
-
-    let updateId = localStorage.getItem('editId')
-    cl(updateId)
-    
-    let updateUrl = `${baseUrl}/posts/${updateId}`;
-    cl(updateUrl)
-
-    let xhr = new XMLHttpRequest();
-
-    xhr.open('PATCH',updateUrl,true);
-
-    xhr.send(JSON.stringify(updatedObj))
-
-    xhr.onload = function()
-    {
-       if(xhr.status===200)
-       {
-           cl(xhr.response)
-
-           Swal.fire({
-             icon:'success',
-             title:'Congratulation',
-             text:'Successfuly Updated',
-             timer:2000
-           })
-           let getIndex = postAarr.findIndex(post=>{
-             return post.id == updateId
-           })
-           cl(getIndex)
-          
-            postAarr[getIndex].title = updatedObj.title;
-            postAarr[getIndex].body = updatedObj.body;
-            postAarr[getIndex].userId = updatedObj.userId;
-             
-
-              temp(postAarr)
-
-
-       }
-
-           userForm.reset()
-    }
-
-  }
-   
-    
-// ------------------------------------------
-
-const onDelete = (ele)=>{
-  cl(ele)
-
-  let delId = ele.closest('.card').id;
-  cl(delId)
-
-  let delUrl  = `${baseUrl}/posts/${delId}`;
-  cl(delUrl)
-
-  let xhr = new XMLHttpRequest()
-
-  xhr.open('DELETE',delUrl,true);
-
-  xhr.send()
-
-  xhr.onload = function()
-  {
-     if(xhr.status===200)
+     } 
+     
+     else if(methodName==='DELETE')
      {
-        cl(xhr.response)
-
-       let card =  document.getElementById(delId)
-       cl(card)
-       card.remove()
+       let getIndex = apiUrl.indexOf('posts/');
+       let id = apiUrl.slice(getIndex+6);
+       document.getElementById(id).remove()
+       
      }
+     else if(methodName === 'POST')
+     {
+       let card = document.createElement('div')
+       card.className = `card mb-4`;
+       let postId = JSON.parse(xhr.response)
+       card.id = postId.id;
+       cl(card)
+       card.innerHTML = `
+       
+        <div class="card-header"style="background-color: lightblue;">
+                <h2 class="text-center">${bodyMsg.title}</h2>
+              </div>
+    
+              <div class="card-body text-center"style="background-color:white;">
+                <p>${bodyMsg.body}</p>
+              </div>
+    
+              
+              <div class="card-footer d-flex justify-content-between"style="background-color:lightgray;">
+                <button class="btn btn-primary"onclick = 'onEdit(this)'>Edit</button>
+                <button class="btn btn-danger"onclick = 'onDelete(this)'>Delete</button>
+              </div>
+
+              
+      
+      
+      `
+      postContainer.append(card);
+
+      
+      
+      userForm.reset()
+      PNotify.success({
+        title: 'Successfully added',
+        delay:1000
+        
+      });
+    }
+    
+
+   }
+ } 
+} 
+
+
+    
+ 
+    
+  makeAPI('GET',postsUrl)  
+
+
+ const fillData = (eve)=>{
+    eve.preventDefault()
+    cl('Clicked')
+    
+
+    let obj = 
+    {
+       title:title.value,
+       body:body.value,
+       userId:userId.value,
+       
+    }
+    cl(obj)
+    makeAPI('POST',postsUrl,obj)
+    
   }
+  
+    
 
 
+
+
+const onEdit = (ele)=>{
+   let editId = ele.closest('.card').id;
+   console.log('Edit ID:', editId);
+ localStorage.setItem('edit',editId);
+   
+
+   let editUrl = `${baseUrl}posts/${editId}`;
+   cl(editUrl)
+
+   
+   
+   const scroll =()=>{userForm.scrollIntoView({ block:'end', behavior:'instant' })};
+   scroll()     
+     
+     makeAPI("GET",editUrl)
 }
 
+   
 
 
 
+
+//   ############################################################################
+   
+  //  To scrolling we can use Diffrent Methods
+   
+
+    // document.getElementById('userForm').scrollIntoView({behavior: 'instant' , block :'end' });
+
+
+
+ // -----------------------------------------------------------------------------------
+
+
+  //  window.scrollTo(0, 0);
+
+ // -----------------------------------------------------------------
+
+
+   // document.documentElement.scrollTop = 0; // For modern browsers
+ //  -------------------------------------------------------------------------
+
+
+
+   // userForm.scrollIntoView({
+   //   behavior: 'auto', // 'auto' for immediate scroll without smooth animation/   //   block: 'end',   // Align the top of the form with the top of the window
+   // });
+
+ // ---------------------------------------------------------------------------
+
+
+//   // function scroll() {
+//   //   window.scrollTo({
+//   //     top: 0,
+//   //     behavior: 'smooth'
+//   //   });
+//   // }
+//   // scroll()
+
+
+   // ------------------------------------------------------------------------
+
+//   }
+
+
+
+
+  //  ############################################################################
+
+ 
+ 
+  const onUpdate=()=>{
+    let updatedObj={
+        title:title.value,
+        body:body.value,
+        userId:userId.value
+    }
+    cl(updatedObj);
+    let updatedId=localStorage.getItem("edit");
+    let updateUrl=`${baseUrl}posts/${updatedId}`;
+    
+    makeAPI("PUT",updateUrl,updatedObj);
+}  
+
+
+
+
+  const onDelete = (ele)=>{
+    let getDelId  = ele.closest('.card').id;
+    cl( getDelId)
+  
+    let delUrl = `${baseUrl}posts/${getDelId}`;
+  
+    makeAPI('DELETE',delUrl)
+  }
+   
+
+  
+
+// makeAPI('GET','https://jsonplaceholder.typicode.com/todos')  
+
+
+// const createCards = (postObj)=>{
+//   let card = document.createElement('div')
+//   card.className = 'card mb-4';
+//   card.id = postObj.id;
+//   card.innerHTML = `
+  
+  
+//     <div class="card-header"style="background-color: lightblue;">
+//             <h2 class="text-center">${postObj.title}</h2>
+//           </div>
+
+//           <div class="card-body text-center"style="background-color:white;">
+//             <p>${postObj.body}</p>
+//           </div>
+
+          
+//           <div class="card-footer d-flex justify-content-between"style="background-color:lightgray;">
+//             <button class="btn btn-primary"onclick = 'onEdit(this)'>Edit</button>
+//             <button class="btn btn-danger"onclick = 'onDelete(this)'>Delete</button>
+//           </div>
+  
+  
+//   `
+//   postContainer.append(card)
+// }
 
 
 
@@ -274,6 +332,8 @@ let temp = (arr)=>{
                   
                   <div class="card-footer d-flex justify-content-between"style="background-color: ${i % 2 === 0 ? 'lightgray' : 'lightpink'};">
                     <button class="btn btn-primary"onclick = 'onEdit(this)'>Edit</button>
+                    
+
                     <button class="btn btn-danger"onclick = 'onDelete(this)'>Delete</button>
                   </div>
 
@@ -288,3 +348,10 @@ let temp = (arr)=>{
 
 userForm.addEventListener('submit',fillData)
 upBtn.addEventListener('click',onUpdate)
+// sbBtn.addEventListener('click',onsubBtn)
+
+// Notes:--
+
+
+// target: The object to which properties are added or merged.
+// sources: One or more objects whose properties are assigned to the target object.
